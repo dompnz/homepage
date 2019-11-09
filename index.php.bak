@@ -1,0 +1,68 @@
+<?php
+
+?>
+
+<!doctype html>
+<html lang="de">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="skin-<?php echo rand(1,1); ?>">
+	<header class="header"></header>
+	<div class="hero">
+		<div class="hero__container">
+			<div class="hero__content">
+				<h1>Hi <span>there</span>, I am a</h1>
+				<h1>WEB DEV.</h1>
+				<button type="button">Contact</button><button type="button">About me</button>
+			</div>
+		</div>
+		<div class="scroll-down"></div>
+	</div>
+	<div class="info-container">
+		<main class="info-child hire-me">
+				<h2>HIRE ME!</h2>
+				<p>We fit together because...</p>
+		</main>
+		<div class="skills">
+				<h2>SKILLS</h2>
+				<p>My skills include...</p>
+				<div class="skillset">
+					<div class="skillbar main-skill">PHP</div>
+					<div class="skillbar sub-skill">OOP</div>
+				</div>
+				<div class="skillset">
+					<div class="skillbar main-skill">Javascript</div>
+				</div>
+				<div class="skillset">
+					<div class="skillbar main-skill">CSS</div>
+					<div class="skillbar sub-skill">SCSS</div>
+				</div>
+		</div>
+		<div class="about-me">
+				<h2>ABOUT ME</h2>
+				<p>Some stuff...</p>
+		</div>
+		<div class="contact">
+			<h2>CONTACT</h2>
+			<p><a href="mailto:dominic.pr93@gmail.com">E-Mail me</a></p>
+			<form>
+				<input type="text">
+				<textarea></textarea>
+			</form>
+		</div>
+		<footer class="footer"><p>&copy; 2019</p></footer>
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+</body>
+</html>
