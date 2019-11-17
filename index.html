@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="de">
+
 <head>
 
 	<meta charset="utf-8">
@@ -14,12 +15,12 @@
 
 <body class="">
 	<header class="header">
-			<div class="header__logo">Dominic Pranz</div>
-			<ul class="header__menu">
-				<li data-jump-to="#about-me">About me</li>
-				<li data-jump-to="#skills">Skills</li>
-				<li data-jump-to="#contact">Contact me</li>
-			</ul>
+		<div class="header__logo">Dominic Pranz</div>
+		<ul class="header__menu">
+			<li data-jump-to="#about-me">About me</li>
+			<li data-jump-to="#skills">Skills</li>
+			<li data-jump-to="#contact">Contact me</li>
+		</ul>
 	</header>
 	<div class="hero">
 		<div class="hero__container">
@@ -34,14 +35,15 @@
 	</div>
 	<main class="info-container">
 		<div class="about-me" id="about-me">
-				<h2>ABOUT ME</h2>
-				<p>Hi, my name is Dominic and I <span style="color:red;">LOVE</span> web development.<br>
-				I am currently 25 years young and probably play video games just a bit to much.<br>
-				Also I love cats. Have a cute <a href="images/cat-pic.jpg" target="_blank">cat pic</a>.<br></p>
-				<p>Something about the idea of building the web and making people have amazing experiences just inspires me. Currently I am looking for people to collaborate with, so feel free to contact me and say hi if you are interested in that.</p>
-				<p>How did I get to where I am today?<br>
-				Well it all started some years ago after graduating from <a href="http://www.htl-salzburg.ac.at/" target="_blank">HTL Salzburg</a>. I was ready to change the world!<br>...but felt like I still lacked the skills needed to do so. After about a year of teaching myself the basics of web development whenever I had free time I was ready for the next step.<br>
-				So I joined the amazing guys at <a href="https://www.salzburg-digital.at/" target="_blank">SalzburgDigital</a>. I learned a lot there and this time will always have a special place in my heart. But now it is time to move on and reach even higher peaks. If you are like me and believe that creativity and a healthy bit of chaos can make the world a better place (or at least a more interesting one) I would love to hear from you!
+			<h2>ABOUT ME</h2>
+			<p>Hi, my name is Dominic and I <span style="color:red;">LOVE</span> web development.<br>
+				I am currently <span id="current-age"></span> years young and live in Salzburg.<br><br></p>
+			<p>Something about the idea of building the web and making people have amazing experiences just inspires me. Currently I am looking for people to collaborate with, so feel free to contact me and say hi if you are interested in that.</p>
+			<p>How did I get to where I am today?<br>
+				Well it all started some years ago after graduating from <a href="http://www.htl-salzburg.ac.at/" target="_blank">HTL Salzburg</a>. I was ready to change the world!<br>...but felt like I still lacked the skills needed to do so. After about a
+				year of teaching myself the basics of web development whenever I had free time I was ready for the next step.<br>
+				So I joined the amazing guys at <a href="https://www.salzburg-digital.at/" target="_blank">Salzburg Digital</a>. I learned a lot there and this time will always have a special place in my heart. But it was time to move on and reach even
+				higher peaks. If you are like me and believe that creativity and a healthy bit of chaos can make the world a better place (or at least a more interesting one) I would love to hear from you!
 			</p>
 		</div>
 		<div class="skills1" id="skills">
@@ -49,17 +51,18 @@
 		</div>
 		<div class="skills2">
 			<ul>
-					<li>PHP</li>
-					<li>Javascript</li>
-					<li>CSS</li>
-					<li>Wordpress</li>
-					<li>Databases (MySQL)</li>
-					<li>SEO</li>
+				<li>PHP</li>
+				<li>Javascript / Angular</li>
+				<li>CSS3 / SCSS</li>
+				<li>Wordpress</li>
+				<li>Databases (MySQL)</li>
+				<li>SEO</li>
 			</ul>
 		</div>
 		<div class="hire-me" id="hire-me">
 			<h2>When are we a good fit?</h2>
-			<p>I specifically look for likeminded people with a vision for a more creative and innovative digital landscape and also an opportunity to improve my frontend skills. But I am also always open for new possibilites. Just hit me with that crazy idea you are having - I am sure we will get along just fine :)</p>
+			<p>I specifically look for likeminded people with a vision for a more creative and innovative digital landscape and an opportunity to create cool stuff on the web together. But I am also always open for new possibilites. If you are interested
+				just message me and I will get back to you as soon as I can :)</p>
 			<!--h2></h2>
 			<p></p-->
 		</div>
@@ -76,11 +79,12 @@
 		</div>
 		<footer class="footer">
 			<span class="footer__left"></span>
-			<span class="footer__right">&copy; 2019, Dominic Pranz</span>
+			<span class="footer__right">&copy; <span id="current-year"></span>, Dominic Pranz</span>
 		</footer>
 	</main>
 
 	<script src="js/typewriter.js"></script>
 	<script src="js/scripts.min.js"></script>
 </body>
+
 </html>
