@@ -3,10 +3,14 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
   // calculate dates
-  let currentYear = new Date().getFullYear();
-  let currentAge = currentYear - new Date('August 31, 1993').getFullYear();
-  document.querySelector('#current-year').textContent = currentYear;
+  let currentDate = new Date();
+  let birthdayDate = new Date('August 31, 1993');
+  let diffTimeMiliseconds = Math.abs(currentDate - birthdayDate);
+  let diffTimeYears = diffTimeMiliseconds / (1000 * 60 * 60 * 24 * 365);
+  let currentAge = Math.floor(diffTimeYears);
+  let currentYear = currentDate.getFullYear();
   document.querySelector('#current-age').textContent = currentAge;
+  document.querySelector('#current-year').textContent = currentYear;
 
   //special text
   if (window.location.hash === "#hire-me-redox") {
@@ -48,15 +52,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
-  document.querySelector('.scroll-down').addEventListener("click", function() {
+  document.querySelector('.scroll-down').addEventListener("click", function () {
     scrollToTargetAdjusted('main');
   });
-  document.querySelector('.hero button').addEventListener("click", function() {
+  document.querySelector('.hero button').addEventListener("click", function () {
     scrollToTargetAdjusted('main');
   });
 
   document.querySelectorAll('.header .header__menu li').forEach(li => {
-    li.addEventListener("click", function() {
+    li.addEventListener("click", function () {
       scrollToTargetAdjusted(li.getAttribute("data-jump-to"));
     });
   });
@@ -78,11 +82,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  window.addEventListener('scroll', function(e) {
+  window.addEventListener('scroll', function (e) {
     last_known_scroll_position = window.scrollY;
 
     if (!ticking) {
-      window.requestAnimationFrame(function() {
+      window.requestAnimationFrame(function () {
         doSomething(last_known_scroll_position);
         ticking = false;
       });
