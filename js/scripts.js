@@ -1,4 +1,6 @@
 /**/
+import Typewriter from "typewriter-effect/dist/core";
+import { annotate } from "rough-notation";
 
 document.addEventListener("DOMContentLoaded", (event) => {
 	// calculate dates
