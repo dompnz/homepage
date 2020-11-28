@@ -1,4 +1,4 @@
-/**/
+// imports
 import Typewriter from "typewriter-effect/dist/core";
 import { annotate } from "rough-notation";
 
