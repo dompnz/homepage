@@ -8,6 +8,8 @@
 // breakpoints
 $breakpoint-tablet: 768px;
 
+$container-padding: 2rem;
+
 ::selection {
 	background: lightgrey;
 }
@@ -57,13 +59,15 @@ button,
 	letter-spacing: 3px;
 	font-weight: bold;
 	white-space: nowrap;
-}
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 70vw; // long button text can stretch the whole section around it on mobile. this prevents it.
 
-button:hover,
-.button:hover {
-	color: black;
-	background-color: white;
-	text-decoration: line-through;
+	&:hover {
+		color: black;
+		background-color: white;
+		text-decoration: line-through;
+	}
 }
 
 h2 {
@@ -227,6 +231,7 @@ a:active {
 }
 
 .info-container {
+	position: relative;
 	display: grid;
 	grid-template-rows: repeat(5, auto) 50px;
 	grid-template-columns: 1fr;
@@ -238,9 +243,12 @@ a:active {
 		"contact"
 		"footer";
 	grid-gap: 4rem 0.75rem;
-	padding: 0 2rem;
+	//padding: 0 $container-padding;
 	margin: 0 auto;
-	max-width: 1000px;
+	width: 1000px;
+	max-width: calc(100% - #{$container-padding} * 2);
+	overflow-wrap: break-word;
+	//overflow: hidden;
 
 	@media (min-width: $breakpoint-tablet) {
 		grid-template-rows: repeat(4, auto) 50px;
@@ -253,10 +261,42 @@ a:active {
 			"footer footer";
 		grid-gap: 10rem 0.75rem;
 	}
+
+	section {
+	}
 }
 
 .about-me {
 	grid-area: about-me;
+}
+
+.tech {
+	ul {
+		margin-top: 2rem;
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+
+		li {
+			display: inline-block;
+			margin: 0 2rem 2rem 0;
+			border: 1px solid lightgray;
+			padding: 1rem;
+		}
+	}
+
+	button {
+		margin: 0;
+		color: black;
+		border-color: black;
+
+		&:hover {
+			text-decoration: none;
+			color: white;
+			background-color: black;
+		}
+	}
 }
 
 .hire-me {

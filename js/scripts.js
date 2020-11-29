@@ -1,6 +1,6 @@
 // imports
-import Typewriter from "typewriter-effect/dist/core";
-import { annotate } from "rough-notation";
+import Typewriter from "typewriter-effect/dist/core"; // https://www.npmjs.com/package/typewriter-effect
+import { annotate, annotationGroup } from "rough-notation"; // https://roughnotation.com/ https://github.com/rough-stuff/rough-notation
 
 document.addEventListener("DOMContentLoaded", (event) => {
 	// calculate dates
@@ -36,6 +36,38 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		.pauseFor(2500)
 		.pauseFor(2500)
 		.start();
+
+	// return a generated annotation group
+	function generateAg() {
+		let highlights = [];
+		const annotateColor = "lightgrey";
+		// use a random config each time
+		const annotateConfigs = [
+			{ type: "underline", color: annotateColor, strokeWidth: 10 },
+			{ type: "box", color: annotateColor },
+			{ type: "circle", color: annotateColor },
+			{ type: "highlight", color: annotateColor },
+		];
+		const randomAnnotateConfig = annotateConfigs[Math.floor(Math.random() * annotateConfigs.length)];
+
+		document.querySelectorAll(".tech li span").forEach((element) => {
+			highlights.push(annotate(element, randomAnnotateConfig));
+		});
+		return annotationGroup(highlights);
+	}
+	let ag = generateAg();
+	let isTechHighlighted = false;
+
+	// annotate on button press
+	document.querySelector(".tech button").addEventListener("click", (e) => {
+		if (!isTechHighlighted) {
+			ag.show();
+		} else {
+			ag.hide();
+			ag = generateAg();
+		}
+		isTechHighlighted = !isTechHighlighted;
+	});
 
 	// add scroll jumps
 	function scrollToTargetAdjusted(x) {
