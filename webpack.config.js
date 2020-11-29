@@ -13,7 +13,7 @@ module.exports = {
 					// Creates `style` nodes from JS strings
 					"style-loader",
 					// Translates CSS into CommonJS
-					"css-loader?url=false",
+					"css-loader?url=false", // disable url option to
 					// Compiles Sass to CSS
 					"sass-loader",
 				],
@@ -25,14 +25,6 @@ module.exports = {
 					loader: "babel-loader",
 				},
 			},
-			/*{
-				test: /\.(png|jpe?g|gif)$/i,
-				use: [
-					{
-						loader: "file-loader",
-					},
-				],
-			},*/
 		],
 	},
 	output: {
