@@ -56,17 +56,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		return annotationGroup(highlights);
 	}
 	let ag = generateAg();
-	let isTechHighlighted = false;
 
 	// annotate on button press
 	document.querySelector(".tech button").addEventListener("click", (e) => {
-		if (!isTechHighlighted) {
-			ag.show();
-		} else {
-			ag.hide();
-			ag = generateAg();
-		}
-		isTechHighlighted = !isTechHighlighted;
+		ag.hide();
+		ag = generateAg();
+		ag.show();
 	});
 
 	// add scroll jumps
