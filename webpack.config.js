@@ -13,7 +13,7 @@ module.exports = {
 					// Creates `style` nodes from JS strings
 					"style-loader",
 					// Translates CSS into CommonJS
-					"css-loader",
+					"css-loader?url=false",
 					// Compiles Sass to CSS
 					"sass-loader",
 				],
@@ -25,19 +25,20 @@ module.exports = {
 					loader: "babel-loader",
 				},
 			},
-			{
+			/*{
 				test: /\.(png|jpe?g|gif)$/i,
 				use: [
 					{
 						loader: "file-loader",
 					},
 				],
-			},
+			},*/
 		],
 	},
 	output: {
+		// we currently output into root instead of dist to be able to host it on github pages
 		path: path.resolve(__dirname, "./"),
-		filename: "index_bundle.min.js",
+		filename: "bundle.min.js",
 	},
 	mode: process.env.NODE_ENV === "production" ? "production" : "development",
 	plugins: [
