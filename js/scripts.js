@@ -48,9 +48,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			{ type: "circle", color: annotateColor },
 			{ type: "highlight", color: annotateColor },
 		];
-		const randomAnnotateConfig = annotateConfigs[Math.floor(Math.random() * annotateConfigs.length)];
 
 		document.querySelectorAll(".tech li span").forEach((element) => {
+			const randomAnnotateConfig = annotateConfigs[Math.floor(Math.random() * annotateConfigs.length)];
 			highlights.push(annotate(element, randomAnnotateConfig));
 		});
 		return annotationGroup(highlights);

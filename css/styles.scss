@@ -233,10 +233,11 @@ a:active {
 .info-container {
 	position: relative;
 	display: grid;
-	grid-template-rows: repeat(5, auto) 50px;
+	grid-template-rows: repeat(6, auto) 50px;
 	grid-template-columns: 1fr;
 	grid-template-areas:
 		"about-me"
+		"tech"
 		"skills1"
 		"skills2"
 		"hire-me"
@@ -251,15 +252,16 @@ a:active {
 	//overflow: hidden;
 
 	@media (min-width: $breakpoint-tablet) {
-		grid-template-rows: repeat(4, auto) 50px;
+		grid-template-rows: repeat(5, auto) 50px;
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas:
 			"about-me about-me"
+			"tech tech"
 			"skills1 skills2"
 			"hire-me hire-me"
 			"contact contact"
 			"footer footer";
-		grid-gap: 10rem 0.75rem;
+		grid-gap: 4rem 0.75rem;
 	}
 
 	section {
@@ -271,18 +273,23 @@ a:active {
 }
 
 .tech {
+	grid-area: tech;
+
 	ul {
 		margin-top: 2rem;
 		list-style-type: none;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
+		justify-content: auto;
+		font-size: 0.9rem;
 
 		li {
 			display: inline-block;
 			margin: 0 2rem 2rem 0;
 			border: 1px solid lightgray;
 			padding: 1rem;
+			//cursor: default;
+			pointer-events: none;
 		}
 	}
 
@@ -290,6 +297,7 @@ a:active {
 		margin: 0;
 		color: black;
 		border-color: black;
+		font-size: 0.9rem;
 
 		&:hover {
 			text-decoration: none;
